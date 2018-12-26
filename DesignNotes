@@ -1,0 +1,28 @@
+Moonplush Design Notes
+v1.0
+by Zack "Snow" Podany
+
+Device Features
+- Based on ESP8266 microprocessor.
+- Real time clock module provides accurate current moon phase.
+  - Calendar functions of RTC will not be used as they do not appear to be accurate with respect to DST and leap year calculations.
+  - Unix Time read from RTC, converted to Julian time.
+    - Julian time converted to Julian Epoch 2010 time.
+    - Julian time converted to local time in settings menu.
+    - Local time converted to julian time, to unix time for adjusting RTC settings.
+- Captive portal Soft AP allows for internet enabled device connection to change device settings.
+  - Settings saved to EEPROM of chip.
+- Simulation of lunar eclipse will show earth's umbra across moon face as darkened red glow.
+- Simulation of solar eclipse will show moon's traversal in front of sun with edge light lights on front face. 
+    Simulation of blockage of sunlight will be achieved with rear lights gradually dimming.
+- Function to simulate conditions for given day/time.
+- Option to auto-wake on eclipse events.
+- Device operation options for push on push off and push on timer off.
+- Timeout settings adjustment.
+- Eclipse timeout override option.
+- Demo mode for showing off functions.
+- Nightlight mode to slowly transition from new moon to full back to new.
+  - Configurable total transition times (new to full, full to new).
+- Auto wake mode - slowly illuminate at set alarm time.
+- Custom 3D printed enclosure includes push button face and battery connector.
+- Run from AA batteries?  3 or 4?
