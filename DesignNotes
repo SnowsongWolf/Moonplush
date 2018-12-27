@@ -26,3 +26,14 @@ Device Features
 - Auto wake mode - slowly illuminate at set alarm time.
 - Custom 3D printed enclosure includes push button face and battery connector.
 - Run from AA batteries?  3 or 4?
+
+Notes on phase calculation.
+- Phase output indicates percentage of visible disk that is lit ranging from 0 to 1.
+  - It is unknown yet if this indicates actual area lit versus unlit, or if this indicates the percentage of travel of the
+    illuminated limb.
+    - Practically speaking, the difference between the two may be too miniscule to be worth differentiation in implementation
+      in the display engine.
+- Moon age is represented as a degree from 0 to 360 indicating the difference in angle of the sun and moon as observed from the Earth.
+- Phase can be combined with waxing and waning depending on the moon age in relation to 180 degrees.  Prior to 180 is waxing.
+  Equal to 180 is full moon.  Greater than 180 is waning.  Euqal to 0 is new moon.
+- Some fuzzy logic should be applied to new and full moon, if we are going to somehow indicate that (perhaps a slow pulse?).
