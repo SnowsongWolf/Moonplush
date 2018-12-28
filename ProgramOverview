@@ -1,0 +1,47 @@
+1.  Init
+  - set up objects
+  - set initial values
+  - read settings from EEPROM
+  - check alarm state
+  - check button press state
+
+2.  Main Loop
+  - if alarm
+    if eclipse alarm, go to eclipse display
+    if wake alarm, go to wake display
+    clear alarm
+    
+  - if button
+    if settings sequence, go to portal
+    if operation in progress, go to sleep
+    set timeout
+    check eclipse condition
+    if eclipse, go to eclipse display
+    else, go to moon phase display
+    
+  - if web
+    handle web commands
+    set timeout
+    
+  - run LED update
+    
+3.  Portal
+  - set timeout to X minutes
+  - wake up wifi
+  - start dns
+  - start server
+
+4.  Moon phase
+  - if realtime, get time from clock
+    else set time from settings
+  - calculate moon display
+  - set new moon/full moon flags
+  
+5.  LED update
+  - calculate pixel brightness/color from moon phase
+  - if eclipse, calculate pixel brightness/color from eclipse calc
+  - if not eclipse and full/new moon, calculate pulse targets
+  - if eclipse and peak, calculate pulse targets
+  - if pulse, tween based on time.
+  - send pixel update
+  
